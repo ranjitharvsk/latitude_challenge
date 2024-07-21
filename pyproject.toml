@@ -1,0 +1,24 @@
+[project]
+name = "latitude_challenge"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Kanthi R", email = "ranjitharvsk@gmail.com"},
+]
+dependencies = [
+    "pyspark>=3.5.1",
+    "findspark>=2.0.1",
+    "coverage>=7.5.4",
+    "faker>=26.0.0",
+    "py4j>=0.10.9.7",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
