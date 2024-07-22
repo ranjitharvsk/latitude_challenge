@@ -2,38 +2,43 @@
 
 ## Installation
 
-``` bash
-pip install pdm
-```
-
-## Usage
+### Clone the repository
 
 ``` bash
-pdm --help
+git clone https://github.com/ranjitharvsk/latitude_challenge.git
 ```
-## Usage to install the dependencies
+### hnage directory 
 ``` bash
-pdm  install  
-```
-## how to run the main program to generate data files ( fake , masked data )
-### run the following command  from the prackage location "/src/latitude_challende/"
-``` bash
-python run.py  
+cd latitude_challenge
 ```
 
-## Run the following  test commands  from the prackage test folder location "/tests/"
-### how to run test file
+### Crete docker image from  Dockerfile location
+``` bash
+docker build -t my-latitude-app .
+```
+### Run the applcation using the created image
+``` bash
+docker run my-latitude-app
+```
+
+### run the individual jobs locally or docker shell
+``` bash
+docker run -it my-latitude-app sh
+```
+#### how to main file file
+``` bash
+python  run.py 
+```
+#### how to run test file
 ``` bash
 python -m unittest anonymise_data_test.py
 ```
-
-### how to run test file with coverage report
-
+#### how to run test file with coverage report
 ``` bash
 python -m coverage run -m unittest anonymise_data_test.py
 ```
 
-### Run coverage report just for  anonymise_data_test.py
+#### Run coverage report just for  anonymise_data_test.py
 ``` bash
 coverage report -m anonymise_data_test.py
 
@@ -53,7 +58,8 @@ TOTAL                       40      7    82%
 * The job can be scheduled/Orchestrated to read and write from the datalake as a AWS Glue job
 
 ### Coding Standard
-* Cretaed a python project and used pdm for dependency management and unittest for testing inidvidual functions.
+* Cretaed a python project "Latitude_challenge"  and a package "Latitude_challenge1" within that.
+* model [text](latitude_challenge1/anonymise_data.py) has all the core logic with multiples methods. 
 * Fake data created with columns Fist_name, Last_name, Address, data_of_birth using  'Faker' python module.
 * Chose to use pyspark to load, process, analyse the data 
     * Source Data: 'fake_data' function form the package generates CSV file  containing first_name, last_name, address, date_of_birth. 
@@ -62,15 +68,18 @@ TOTAL                       40      7    82%
     * Transform: After file was successfully loaded, data was validatied for accuracy. 'mask_string' function was registered as an UDF(User Defined Function) to anonymise the Fist_name, Last_name, Address     columns and saved to a new file "datafiles\masked_data.csv"
 
 ## Code 
-Python file is located in src folder: src/latitude_challenge/anonymise_data.py
+Python file is located in the package "Latitude_challenge1" folder: anonymise_data.py
 ## Output results as appropritate
+Fake data is written as a CSV ile to this location  'datafiles\output_data.csv'
 Anonymised data is writtten as a CSV file to this location  'datafiles\masked_data.csv'
 ## Testing scenario’s
-Used "unittest" package  to test the class file individual methods to cover all the corner cases.
+Used "unittest" package  to test the class file. The unit test file [text](anonymise_data_test.py) tests individual methods to cover all the corner cases.
+Test fake data is written as a CSV ile to this location  'test_datafiles\output_data_test.csv'
+Test anonymised data is writtten as a CSV file to this location  'test_datafiles\masked_data.csv'
 ### Test file location
 Coverage was also reported.
 ## Source files.
-Git source: 
+Git source: https://github.com/ranjitharvsk/latitude_challenge.git
 
 
 

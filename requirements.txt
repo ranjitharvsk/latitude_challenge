@@ -1,0 +1,5 @@
+pyspark==3.5.1
+py4j==0.10.9.7
+findspark==2.0.1
+coverage==7.5.4
+faker==26.0.0
