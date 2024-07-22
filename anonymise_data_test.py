@@ -4,7 +4,7 @@ from pyspark.sql.functions import col, date_format,to_date
 from pyspark.sql import functions as F
 import coverage
 
-from latitude_challenge.anonymise_data import anonymisedata
+from latitude_challenge1.anonymise_data import anonymisedata
 
 class TestAnonymise(unittest.TestCase):
     

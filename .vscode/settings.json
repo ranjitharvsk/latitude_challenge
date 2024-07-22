@@ -1,5 +1,0 @@
-{
-    "python.terminal.executeInFileDir": true,
-    "python.testing.cwd": "${workspaceFolder}",
-    "python.envFile": "${workspaceFolder}/.env"
-}
