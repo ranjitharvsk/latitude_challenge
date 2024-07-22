@@ -21,7 +21,7 @@ docker build -t latitude-app .
 docker run latitude-app
 ```
 
-### run the individual jobs locally or from docker shell
+### Run the individual jobs locally or from docker shell
 #### Connect to docker shell
 ``` bash
 docker run -it latitude-app sh
@@ -46,11 +46,11 @@ coverage report -m anonymise_data_test.py
 
 # SUBMISSION
 ### Approach, architecture.
-* The Idea of creating this as a python project is to make it extensible and componentized, easy to test, deploy in the form of a data pipeline. 
-* Delivering it as a docker container (Dockerfile) that can be used to run the code locally or any cloud environment
+* The Idea of creating this as a python project is to make it extensible, componentized, easy to test and deploy in the form of a data pipeline. 
+* Delivering it as a docker container (Dockerfile) this can be used to run the code locally or in any cloud environment.
 * It can be integrated with any CI/CD.
 * It can be configured in future to read and write to S3 buckets or any cloud delta lakes like Snowflake and Databricks.
-* The job can be scheduled/Orchestrated using Airflow or can be registered as a AWS Glue job with internal scheduling.
+* The job can be scheduled/Orchestrated using Airflow or can be registered as a AWS Glue job with an in-built scheduling.
 
 ### Coding Standard
 * Cretaed a python project "Latitude_challenge” and a package "Latitude_challenge1" within that.
