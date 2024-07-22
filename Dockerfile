@@ -10,6 +10,12 @@ FROM python:3.12
 # Set the working directory in the container
 WORKDIR /lat_code
 
+# Set write permissions for the /lat_code directory
+RUN mkdir -p /lat_code && \
+    chown -R 1000:1000 /lat_code && \
+    chmod -R 777 /lat_code
+
+
 # Copy the current directory contents into the container at /app
 COPY . /lat_code
 
